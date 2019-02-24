@@ -1,3 +1,6 @@
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update -y
 sudo apt-get install -y neovim
 sudo apt-get install -y python-neovim
 sudo apt-get install -y python3-neovim
