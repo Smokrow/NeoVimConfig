@@ -9,11 +9,13 @@ else
 endif
 Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'zchee/deoplete-jedi'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'davidhalter/jedi-vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'https://github.com/tpope/vim-commentary'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
@@ -30,3 +32,4 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 let mapleader = "	"
+let g:airline#extensions#tabline#enabled = 1
