@@ -1,4 +1,4 @@
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -14,8 +14,12 @@ Plug 'zchee/deoplete-jedi'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'davidhalter/jedi-vim'
 Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/heavenshell/vim-pydocstring'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://github.com/tpope/vim-commentary'
+Plug 'szymonmaszke/vimpyter'
+Plug 'posva/vim-vue'
+Plug 'adelarsq/vim-matchit'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
@@ -33,3 +37,4 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 let mapleader = "	"
 let g:airline#extensions#tabline#enabled = 1
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
