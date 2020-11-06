@@ -19,10 +19,12 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'szymonmaszke/vimpyter'
 Plug 'posva/vim-vue'
 Plug 'grailbio/bazel-compilation-database'
 Plug 'adelarsq/vim-matchit'
+Plug 'lervag/vimtex'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:airline_theme='onedark'
