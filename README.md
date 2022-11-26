@@ -2,7 +2,7 @@
 
 1. run `install.sh`to install all the dependencies 
 2. open neovim and run `:PackerInstall`
-3. install clangd for cpp https://clangd.llvm.org/installation.html
+3. install clangd for cpp https://clangd.llvm.org/installation.html . Make sure to also update the alternative.
 4. Everything should work now :D
 
 
