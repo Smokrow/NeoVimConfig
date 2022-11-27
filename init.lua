@@ -26,8 +26,8 @@ vim.opt.termguicolors = true
 packer.startup(function()
   local use = use
   -- add you plugins here like:
-  use 'vim-airline/vim-airline-themes'
   use 'folke/tokyonight.nvim'
+  use 'navarasu/onedark.nvim'
   use 'neovim/nvim-lspconfig'
   -- Autocompletion
   use 'hrsh7th/nvim-cmp'
@@ -78,7 +78,8 @@ require("nvim-tree").setup({
 -- Disable Mouse
 vim.opt.mouse = ""
 
-require('tokyonight').load()
+-- require('tokyonight').load()
+require('onedark').load()
 
 
 -- Enable Linetoggling
@@ -229,3 +230,19 @@ capabilities = capabilities,
 on_attach = on_attach,
 flags = lsp_flags,
 }
+
+require('lspconfig')['ltex'].setup {
+cmd = {os.getenv("HOME").."/.config/nvim/ltex-ls-15.2.0/bin/ltex-ls"},
+capabilities = capabilities,
+on_attach = on_attach,
+flags = lsp_flags,
+}
+vim.g.tex_flavor = "latex"
+
+
+vim.diagnostic.config({
+  virtual_text = false
+})
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

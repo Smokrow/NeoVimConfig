@@ -11,9 +11,11 @@ tar -xvf texlab-x86_64-linux.tar.gz
 sudo cp texlab /usr/bin/texlab
 rm -r texlab*
 
+wget https://github.com/valentjn/ltex-ls/releases/download/15.2.0/ltex-ls-15.2.0-linux-x64.tar.gz
+tar -xvf ltex-ls-15.2.0-linux-x64.tar.gz 
+mv  ltex-ls-15.2.0 $HOME/.config/nvim/
+sudo rm -r ltex-ls*
 
-
-
-cp init.lua ~/.config/nvim/init.lua
+cp *.lua $HOME/.config/nvim/
 
 
