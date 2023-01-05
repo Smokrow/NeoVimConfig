@@ -52,9 +52,15 @@ packer.startup(function()
   use 'mfussenegger/nvim-lint'
   -- Linetoggle
   use "sitiom/nvim-numbertoggle"
+  use {
+    'kkoomen/vim-doge',
+    run = ':call doge#install()'
+  }
   end
 )
 
+-- Set Python Docstring
+vim.g.doge_doc_standard_python = 'google'
 
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
@@ -159,7 +165,7 @@ require("numbertoggle").setup()
   --
   -- Set up LINTING
   require('lint').linters_by_ft = {
-	  python = {'pylint',}
+	  python = {'pylint','pydocstyle',}
   }
 
   vim.api.nvim_create_autocmd({ "BufWritePost" }, {
