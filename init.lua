@@ -56,6 +56,13 @@ packer.startup(function()
     'kkoomen/vim-doge',
     run = ':call doge#install()'
   }
+  use {
+  'nvim-treesitter/nvim-treesitter',
+  run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+  end,
+  }
   end
 )
 
@@ -89,7 +96,6 @@ require('onedark').load()
 
 -- Enable Linetoggling
 vim.wo.number = true
-require("numbertoggle").setup()
 
 
 
