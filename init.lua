@@ -250,6 +250,21 @@ flags = lsp_flags,
 }
 vim.g.tex_flavor = "latex"
 
+require('lspconfig')['vuels'].setup {
+on_attach = on_attach,
+}
+
+require('lspconfig')['eslint'].setup({
+  capabilities = capabilities,
+  flags = lsp_flags,
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
+
 
 vim.diagnostic.config({
   virtual_text = false
@@ -257,3 +272,10 @@ vim.diagnostic.config({
 -- Show line diagnostics automatically in hover window
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- Setting Shifts and tabstops
+vim.bo.autoindent = true
+vim.bo.expandtab = true
+
+-- Automatically open nvim-tree when opening a new tab
+vim.cmd([[autocmd TabNew * NvimTreeOpen]])
